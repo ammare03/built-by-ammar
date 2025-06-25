@@ -10,7 +10,6 @@ import smileMemoji from "@/assets/images/memoji-smile.png";
 import { Card } from "@/components/Card";
 import { CardHeader } from "@/components/CardHeader";
 import { SectionHeader } from "@/components/SectionHeader";
-import { TechIcon } from "@/components/TechIcon";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import Image from "next/image";
 
@@ -45,26 +44,38 @@ const hobbies = [
   {
     title: "Photography",
     emoji: "📸",
+    left: "5%",
+    top: "5%",
   },
   {
     title: "Music",
     emoji: "🎵",
+    left: "50%",
+    top: "5%",
   },
   {
     title: "Cooking",
     emoji: "🍕",
+    left: "10%",
+    top: "35%",
   },
   {
     title: "Fitness",
     emoji: "🏋️‍♂️",
+    left: "35%",
+    top: "40%",
   },
   {
     title: "Billiards",
     emoji: "🎱",
+    left: "70%",
+    top: "45%",
   },
   {
     title: "Politics",
     emoji: "⚖️",
+    left: "5%",
+    top: "65%",
   },
 ];
 
@@ -87,10 +98,11 @@ export const AboutSection = () => {
               <Image src={bookImage} alt="Book Cover" />
             </div>
           </Card>
-          <Card>
+          <Card className="h-[320px] p-0">
             <CardHeader
               title="My Toolbox"
               desc="Explore the technologies and tools I use to craft exceptional digital experiences."
+              className="px-6 pt-6"
             />
             <ToolboxItems items={toolboxItems} className="mt-6" />
             <ToolboxItems
@@ -99,24 +111,40 @@ export const AboutSection = () => {
               itemsWrapperClassName="-transalte-x-1/2"
             />
           </Card>
-          <Card className="h-[320px] p-0">
+          <Card className="h-[320px] p-0 flex flex-col">
             <CardHeader
               title="Beyond the Code"
               desc="Explore my interests and hobbies beyond the digital realm."
-              className="px-6 pt-6"
+              className="px-6 py-6"
             />
-            <div>
+            <div className="relative flex-1">
               {hobbies.map((hobby) => (
-                <div key={hobby.title}>
-                  <span>{hobby.title}</span>
+                <div
+                  key={hobby.title}
+                  className=" absolute inline-flex items-center gap-2 px-6 bg-gradient-to-r from-emerald-300 to-sky-400 rounded-full py-1.5"
+                  style={{ left: hobby.left, top: hobby.top }}
+                >
+                  <span className="font-medium text-gray-950">
+                    {hobby.title}
+                  </span>
                   <span>{hobby.emoji}</span>
                 </div>
               ))}
             </div>
           </Card>
-          <Card>
-            <Image src={mapImage} alt="map" className="size-10" />
-            <Image src={smileMemoji} alt="smile memoji" className="size-10" />
+          <Card className="h-[320px] p-0 relative">
+            <Image
+              src={mapImage}
+              alt="map"
+              className="h-full w-full object-cover object-left-top"
+            />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-20 rounded-full bg-gradient-to-r from-emerald-300 to-sky-400 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outine-gray-950/30">
+              <Image
+                src={smileMemoji}
+                alt="smile memoji"
+                className="size-20 scale-[0.75] px-2"
+              />
+            </div>
           </Card>
         </div>
       </div>
