@@ -1,11 +1,7 @@
-import memojiAvatar1 from "@/assets/images/memoji-avatar-1.png";
-import memojiAvatar2 from "@/assets/images/memoji-avatar-2.png";
-import memojiAvatar3 from "@/assets/images/memoji-avatar-3.png";
-import memojiAvatar4 from "@/assets/images/memoji-avatar-4.png";
-import LWS from "@/assets/images/lws.png";
-import PES from "@/assets/images/pes.png";
-import JHC from "@/assets/images/jhc.png";
-import MPSTME from "@/assets/images/mpstme.png";
+import LWS from "@/assets/images/LWS.png";
+import PES from "@/assets/images/PES.png";
+import JHC from "@/assets/images/JHC.png";
+import MPSTME from "@/assets/images/MPSTME.png";
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
 import { Card } from "@/components/Card";
