@@ -8,7 +8,7 @@ export const Header = () => {
         <a href="/#projects" className="nav-item">
           Projects
         </a>
-        <a href="/#education" className="nav-item">
+        <a href="/#education" className="nav-item hidden md:block">
           Education
         </a>
         <a href="/#about" className="nav-item">
