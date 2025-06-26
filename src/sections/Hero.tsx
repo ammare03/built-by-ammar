@@ -6,6 +6,7 @@ import grainImage from "@/assets/images/grain.jpg";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import StarIcon from "@/assets/icons/star.svg";
 import SparkleIcon from "@/assets/icons/sparkle.svg";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
@@ -137,21 +138,25 @@ export const HeroSection = () => {
             web applications. Reach out for your next project!
           </p>
         </div>
-        <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <Button
-            variant={"outline"}
-            className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl text-white bg-transparent hover:bg-white/10 hover:scale-105 transition-all duration-300 z-10"
-          >
-            <span className="text-white font-semibold">Explore My Work</span>
-            <ArrowDown className="h-6 w-6 text-white" />
-          </Button>
-          <Button
-            variant={"outline"}
-            className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl hover:bg-white/80 hover:scale-105 transition-all duration-300 z-10"
-          >
-            <span>👋</span>
-            <span className="text-gray-900 font-semibold">Lets Connect</span>
-          </Button>
+        <div className="flex flex-col md:flex-row justify-center items-center mt-6 gap-4">
+          <Link href="#projects" className="z-10">
+            <Button
+              variant={"outline"}
+              className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl text-white bg-transparent hover:bg-white/10 hover:scale-105 transition-all duration-300 z-10"
+            >
+              <span className="text-white font-semibold">Explore My Work</span>
+              <ArrowDown className="h-6 w-6 text-white" />
+            </Button>
+          </Link>
+          <Link href="/#contact" className="z-10">
+            <Button
+              variant={"outline"}
+              className="inline-flex items-center gap-2 border border-white bg-white text-gray-900 h-12 px-6 rounded-xl hover:bg-white/80 hover:scale-105 transition-all duration-300 z-10"
+            >
+              <span>👋</span>
+              <span className="text-gray-900 font-semibold">Lets Connect</span>
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

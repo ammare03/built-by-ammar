@@ -1,6 +1,9 @@
 import darkSaasLandingPage from "@/assets/images/dark-saas-landing-page.png";
 import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
 import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import neuroPdf from "@/assets/images/neuro-pdf.png";
+import wardrobeWizard from "@/assets/images/wardrobe-wizard.png";
+import uniresell from "@/assets/images/uniresell.png";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -12,46 +15,60 @@ import { Card } from "@/components/Card";
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "Personal Project",
+    year: "2025",
+    title: "NeuroPDF",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title: "AI-powered PDF summarization with interactive navigation.",
+      },
+      {
+        title: "Secure authentication and subscription management.",
+      },
+      {
+        title: "Modern responsive design with export functionality.",
+      },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
-    image: darkSaasLandingPage,
+    link: "https://github.com/ammare03/neuro-pdf",
+    image: neuroPdf,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "Semester 2 - MCA",
+    year: "2025",
+    title: "Wardrobe Wizard",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "Python-powered image processing for clothing visualization" },
+      { title: "Smart outfit suggestions using real-time weather data" },
+      { title: "MongoDB/JWT authentication with Razorpay payment integration" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
+    link: "https://github.com/mjalawadiya/wardrobe-wizard",
+    image: wardrobeWizard,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "Semester 2 - MCA",
+    year: "2025",
+    title: "UniResell",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      {
+        title:
+          "React marketplace with real-time search, price filters, and infinite scroll.",
+      },
+      {
+        title: "Global cart and authentication state with custom alert hooks.",
+      },
+      {
+        title:
+          "Axios-powered data fetching with error handling and user permissions.",
+      },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://github.com/ammare03/uniresell",
+    image: uniresell,
   },
 ];
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16 lg:py-24">
+    <section className="pb-16 lg:py-24" id="projects">
       <div className="container">
         <SectionHeader
           eyebrow="Real-world Results"
@@ -87,7 +104,7 @@ export const ProjectsSection = () => {
                       </li>
                     ))}
                   </ul>
-                  <Link href={project.link}>
+                  <Link href={project.link} target="_blank">
                     <Button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 border border-white/15 rounded-xl font-semibold inline-flex items-center justify-center gap-2 mt-8 hover:bg-white/70 transition-colors duration-300 ">
                       <span className="font-semibold">View Codebase</span>
                       <ArrowUpRightIcon />
@@ -98,7 +115,7 @@ export const ProjectsSection = () => {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="mt-8 -mb-4 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
+                    className="rounded-2xl mt-8 -mb-8 md:-mb-0 lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none"
                   />
                 </div>
               </div>

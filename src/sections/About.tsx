@@ -4,17 +4,23 @@ import ChromeIcon from "@/assets/icons/chrome.svg";
 import CssIcon from "@/assets/icons/css3.svg";
 import GitHubIcon from "@/assets/icons/github.svg";
 import HTML5Icon from "@/assets/icons/html5.svg";
+import NextJsIcon from "@/assets/icons/nextjs.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import JavaScriptIcon from "@/assets/icons/square-js.svg";
-import bookImage from "@/assets/images/book-cover.png";
+import TailwindIcon from "@/assets/icons/tailwind.svg";
+import NodeJsIcon from "@/assets/icons/nodejs.svg";
+import AndroidIcon from "@/assets/icons/android.svg";
+import PythonIcon from "@/assets/icons/python.svg";
+import FirebaseIcon from "@/assets/icons/firebase.svg";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
+import movieImage from "@/assets/images/movie.png";
 import { Card } from "@/components/Card";
 import { CardHeader } from "@/components/CardHeader";
 import { SectionHeader } from "@/components/SectionHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
 const toolboxItems = [
@@ -41,6 +47,30 @@ const toolboxItems = [
   {
     title: "GitHub",
     iconType: GitHubIcon,
+  },
+  {
+    title: "Next.js",
+    iconType: NextJsIcon,
+  },
+  {
+    title: "Tailwind CSS",
+    iconType: TailwindIcon,
+  },
+  {
+    title: "Node.js",
+    iconType: NodeJsIcon,
+  },
+  {
+    title: "Python",
+    iconType: PythonIcon,
+  },
+  {
+    title: "Firebase",
+    iconType: FirebaseIcon,
+  },
+  {
+    title: "Android",
+    iconType: AndroidIcon,
   },
 ];
 
@@ -86,7 +116,7 @@ const hobbies = [
 export const AboutSection = () => {
   const constraintRef = useRef(null);
   return (
-    <div className="py-20 lg:py-28">
+    <div className="py-20 lg:py-28" id="about">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
@@ -97,11 +127,15 @@ export const AboutSection = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
             <Card className="h-[320px] md:col-span-2 lg:col-span-1">
               <CardHeader
-                title="My Reads"
-                desc="Explore the books shaping my perspectives"
+                title="Watchlist"
+                desc="Interstellar, Shutter Island, Inception, and more."
               />
-              <div className="w-40 mx-auto mt-2 md:mt-0">
-                <Image src={bookImage} alt="Book Cover" />
+              <div className="w-40 mx-auto h-40">
+                <Image
+                  src={movieImage}
+                  alt="Book Cover"
+                  className="rounded-lg h-full object-cover"
+                />
               </div>
             </Card>
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">

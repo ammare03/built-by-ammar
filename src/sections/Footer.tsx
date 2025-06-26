@@ -5,18 +5,22 @@ const footerLinks = [
   {
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/ammar-engineer-9b673b326/",
+    target: "_blank",
   },
   {
     title: "GitHub",
     href: "https://github.com/ammare03/",
+    target: "_blank",
   },
   {
     title: "Leetcode",
     href: "https://leetcode.com/u/ammare03/",
+    target: "_blank",
   },
   {
     title: "Back To Top",
-    href: "#hero",
+    href: "/",
+    target: "_self",
   },
 ];
 
@@ -32,10 +36,10 @@ export const Footer = () => {
           <nav className="flex flex-col md:flex-row items-center gap-8">
             {footerLinks.map((link) => (
               <Link
-                className="inline-flex items-center gap-1.5 hover:-translate-y-[3px] transition-all duration-200 ease-in-out"
+                className="inline-flex items-center gap-1.5 hover:scale-105 transition-all duration-200 ease-in-out"
                 key={link.title}
                 href={link.href}
-                target="_blank"
+                target={link.target}
                 rel="noopener noreferrer"
               >
                 <span className="font-semibold">{link.title}</span>
